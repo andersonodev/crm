@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 40% 98%;
+  --foreground: 215 25% 20%;
+  --primary: 184 97% 32%;
+  --primary-foreground: 0 0% 100%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 215 25% 20%;
+  --border: 214 32% 91%;
+  --ring: 184 97% 32%;
+
+  /* White Label vars (hex) */
+  --primary-color: #0297a2;
+  --sidebar-bg: #0a2b4d;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --primary: 184 97% 32%;
+  --primary-foreground: 0 0% 100%;
+  --card: 224 32% 12%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 33% 20%;
+  --ring: 184 97% 32%;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+@layer components {
+  .glass-sidebar {
+    background-color: color-mix(in srgb, var(--sidebar-bg) 90%, transparent);
+    @apply border-r border-white/10 shadow-2xl backdrop-blur-md;
+  }
+}
