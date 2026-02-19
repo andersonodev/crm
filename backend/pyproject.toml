@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crm-turismo-backend"
+version = "0.1.0"
+description = "Backend CRM SaaS para turismo receptivo"
+requires-python = ">=3.12"
+dependencies = [
+  "Django>=5.0,<6.0",
+  "django-ninja>=1.1.0",
+  "psycopg[binary]>=3.2.0",
+  "celery[redis]>=5.4.0",
+  "redis>=5.0.0",
+  "pydantic>=2.8.0",
+  "google-generativeai>=0.7.2",
+  "groq>=0.9.0",
+  "weasyprint>=62.0",
+  "jinja2>=3.1.4",
+  "python-dotenv>=1.0.1",
+  "whitenoise>=6.7.0",
+  "django-cors-headers>=4.4.0",
+  "dj-database-url>=2.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0",
+  "pytest-django>=4.8.0",
+  "pytest-cov>=5.0.0",
+  "mypy>=1.10.0",
+  "ruff>=0.5.5",
+  "types-redis>=4.6.0.20241004",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-ra -q"
